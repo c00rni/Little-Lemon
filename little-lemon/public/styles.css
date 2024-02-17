@@ -60,6 +60,7 @@ nav {
     background-color: var(--highlight-light);
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .header {
@@ -89,6 +90,11 @@ nav ul {
 }
 
 @media (max-width: 1024px) {
+    nav {
+        position: sticky;
+        top:0;
+    }
+
     nav ul {
        display: none;
     }
