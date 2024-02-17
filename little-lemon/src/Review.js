@@ -8,11 +8,11 @@ function Review(props) {
                 <div className="reviewer">
                     <img src={require("./assets/images/profile.png")} alt={props.name} />
                     <div className="reviewer-info">
-                        {numbers.map((n) => (n <= props.rating) ? <FaStar color="#F4CE14" size={18}/> : <FaStar size={18}/>)}
+                        {numbers.map((n) => (n <= props.rating) ? <FaStar color="#F4CE14" size={18}/> : <FaStar color="#333333" size={18}/>)}
                         <p>{props.name}</p>
                     </div>
                 </div>
-                <p className='reveiwer-comment'>
+                <p className='reviewer-comment'>
                     {props.comment}
                 </p>
             </article>

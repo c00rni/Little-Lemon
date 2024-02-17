@@ -62,6 +62,10 @@ nav {
     justify-content: space-between;
 }
 
+.header img {
+    width: 192px;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -90,6 +94,7 @@ main .button {
     background-color: var(--primary-light);
     border-radius: 5px;
     font-size: var(--type-content-size);
+    font-weight: 500;
 }
 
 /* Hero section */
@@ -242,13 +247,13 @@ main .right {
 .reviewer {
     display: flex;
     flex-flow: row nowrap;
-    gap: 20px;
+    gap: 10px;
 }
 
 .review-container {
     display: flex;
     flex-flow: row wrap;
-    gap:20px;
+    justify-content: space-between;
 }
 
 .reviewer img {
@@ -258,7 +263,7 @@ main .right {
     height: 50px;
 }
 
-.reveiwer-comment {
+.reviewer-comment {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
