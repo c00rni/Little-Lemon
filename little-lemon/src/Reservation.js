@@ -1,14 +1,14 @@
 import Header from './Header';
 import Footer from './Footer';
 
-function OnlineShop() {
+function Reservations() {
     return (
       <>
         <Header />
-            Online shop
+            Reservation
         <Footer />
       </>
     );
   }
 
-  export default OnlineShop;
+  export default Reservations;

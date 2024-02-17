@@ -5,6 +5,7 @@ function BookingPage() {
     return (
       <>
         <Header />
+            Reserve a table
         <Footer />
       </>
     );

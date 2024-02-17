@@ -1,13 +1,14 @@
 import Header from './Header';
 import Footer from './Footer';
 
-function BookingPage() {
+function LoginPage() {
     return (
       <>
         <Header />
+            Login
         <Footer />
       </>
     );
   }
 
-  export default BookingPage;
+  export default LoginPage;
