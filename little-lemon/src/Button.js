@@ -1,8 +1,11 @@
-function Button() {
+function Button({children}) {
     return (
-        <button>
-            Submit
-        </button>
+        <div className="button">
+            <a href="#b" alt="">
+                {children}
+            </a>
+        </div>
+
     );
 }
 

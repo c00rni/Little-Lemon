@@ -1,11 +1,13 @@
-function DishCard() {
+function DishCard(props) {
     return (
         <article className="card">
-            <img src="" alt="" />
-            <h2>Title</h2>
-            <span>12.99</span>
-            <p>Text</p>
-            <a href="#reservations">Order a delivery</a>
+            <img className="card-img" src={require("./assets/images/lemon dessert.jpg")} alt="Special chef dish" />
+            <div className="card-content">
+                <h2 className="card-title">{props.title}</h2>
+                <p className="card-price">{props.price}</p>
+                <p className="card-description">{props.description}</p>
+                <a href="#reservations">Order a delivery <img src={require("./assets/images/moped.png")} alt="" /></a>
+            </div>
         </article>
     );
 }
