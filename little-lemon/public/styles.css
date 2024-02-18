@@ -24,6 +24,17 @@ html {
     font-family: var(--regular-font);
     font-size: var(--base-font-size);
     scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+    display: grid;
+    grid:
+    "header" auto
+    "." 1fr
+    "footer" auto / auto;
+
 }
 
 p {
@@ -33,12 +44,19 @@ p {
 h1 {
     font-size: var(--type-heading-size);
     font-family: var(--headlines-font);
-    font-weight: 700;
+    color: var(--primary-light);
+    font-weight: 500;
 }
 
 h2 {
     font-size: var(--type-subheading-size);
     font-family: var(--headlines-font);
+    font-weight: 500;
+}
+
+h3 {
+    font-size: var(--type-content-size);
+    font-family: var(--regular-font);
     font-weight: 500;
 }
 
@@ -52,6 +70,17 @@ h2 {
     .container {
        padding: 0 20px;
     }
+}
+
+input,
+select {
+    border-radius: 3px;
+    padding-left: 0.2rem;
+    color: var(--highlight-dark);
+    font-size: var(--type-content-size);
+    font-family: var(--regular-font);
+    font-weight: 500;
+    height: 4rem;
 }
 
 /* Navigation */
@@ -125,6 +154,7 @@ a {
 main .button {
     margin-top: 4rem;
 }
+
 .button a {
     padding: 1rem 2rem;
     color: var(--primary-dark);
@@ -132,6 +162,29 @@ main .button {
     border-radius: 5px;
     font-size: var(--type-content-size);
     font-weight: 500;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: var(--type-content-size);
+    font-weight: 700;
+    cursor: pointer;
+    height: 5rem;
+}
+
+.btn-primary {
+    color: var(--primary-dark);
+    background-color: var(--primary-light);
+}
+
+.mt-4 {
+    margin-top: 4rem;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
 }
 
 /* Hero section */
@@ -148,10 +201,6 @@ main .container {
 main h2,
 main p {
     color: var(--highlight-light);
-}
-
-main h1 {
-    color: var(--primary-light);
 }
 
 main .left {
@@ -354,6 +403,10 @@ main .right {
     justify-content: center;
 }
 
+.chef-info h1 {
+    color: var(--highlight-dark)
+}
+
 .chef-img{
     position: relative;
     flex: 0 0 1fr;
@@ -442,3 +495,144 @@ footer ul {
     list-style: none;
 }
 
+/* Booking table */
+
+.reserver-table {
+    background-color: var(--primary-dark);
+    color: var(--highlight-light);
+    padding: 6rem 0;
+}
+
+.reserver-table .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.reserver-table label {
+    margin-top: 20px;
+}
+
+.reserver-table button {
+    margin: 4rem 0;
+}
+
+.reserver-table label {
+    font-family: var(--regular-font);
+    font-size: var(--type-content-size);
+    color: var(--highlight-light);
+}
+
+.reserver-table input {
+    color: var(--highlight-dark);
+}
+
+.bookingForm {
+    max-width: 420px;
+}
+
+.bookingForm form{
+    display: grid;
+    grid:
+    "bookingDate bookingTime" auto
+    "bookingGuests bookingGuests" auto
+    "bookingOccasion bookingOccasion" auto
+    "bookingSubmit bookingSubmit" auto
+    / 1fr 1fr;
+    width: 100%;
+    gap: 10px;
+    margin-top:21px;
+}
+
+@media (max-width: 1024px) {
+    .booking aside img {
+        display: none;
+    }
+
+    .booking aside {
+        display: none;
+    }
+}
+
+.booking form #guests {
+    grid-area: bookingGuests;
+}
+
+#bookingDate {
+    grid-area: bookingDate;
+}
+
+#bookingTime {
+    grid-area: bookingTime
+}
+
+#bookingOccasion {
+    grid-area: bookingOccasion;
+}
+
+#optStd {
+    grid-area: optStd;
+}
+
+#optOut {
+    grid-area: optOut;
+}
+
+/* .bookingOptions {
+    grid-area: bookingOptions;
+    display: grid;
+    grid:
+    "bookingOptionsTitle bookingOptionsTitle" auto
+    ". optStd" auto
+    ". optOut" auto /
+    1fr 1fr;
+}
+
+.bookingOptions h3 {
+    grid-area: bookingOptionsTitle;
+}
+
+.bookingOptions input {
+    height: 2rem;
+}
+
+.bookingOptions span {
+    font-size: var(--type-content-size);
+} */
+
+#bookingSubmit {
+    grid-area: bookingSubmit;
+    width: 100%;
+}
+
+.bookingImg {
+    flex: 1;
+    object-fit: cover;
+}
+
+.bookingLittleIamge {
+    display: flex;
+    max-height: 400px;
+    max-width: 90px;
+}
+
+.booking {
+    display: flex;
+    gap: 30px;
+}
+
+.booking aside {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.bookingFormHeader {
+    flex: 1;
+}
+
+.booking aside img {
+    object-fit: cover;
+    width: 100%;
+}

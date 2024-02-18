@@ -1,4 +1,3 @@
-import Button from "./Button";
 import DishCard from "./DishCard";
 
 const data = [
@@ -13,7 +12,7 @@ function Specials() {
             <div className="container">
                 <div className="special-heading">
                     <h2 className="special-title">Specials</h2>
-                    <Button>Order online</Button>
+                    <a className="btn btn-primary" href="/order-online">Order online</a>
                 </div>
                 <div className="special-dishs">
                     {data.map((data) => <DishCard title={data.title} price={data.price} description={data.description}/>)}
