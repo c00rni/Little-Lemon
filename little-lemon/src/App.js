@@ -6,20 +6,13 @@ import LoginPage from './LoginPage';
 import OnlineShop from './OnlineShop';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useReducer } from 'react';
-//import { useEffect, useReducer } from 'react';
-//import { fetchAPI} from './fakeApi';
+import { fetchAPI} from './fakeApi';
 
 
 function App() {
 
-  // const [date, setDate] = useState(null)
-  const updateTimes = (date) => new Set(["12:00", "13:30"])
-  const initializeTimes = () => [];
-  const [availabaleTimes, dispatch] = useReducer(updateTimes, initializeTimes)
-
-  // useEffect((date)=> {
-  //   setAvailabaleTimes(fetchAPI(date))
-  // }, [date])
+  const updateTimes = (date) => fetchAPI(date)
+  const [availabaleTimes, dispatch] = useReducer(updateTimes, [])
 
 
   return (

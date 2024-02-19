@@ -549,8 +549,11 @@ footer ul {
     "bookingSubmit bookingSubmit" auto
     / 1fr 1fr;
     width: 100%;
-    gap: 10px;
     margin-top:21px;
+}
+
+.bookingForm form > * {
+    margin-bottom: 10px;
 }
 
 @media (max-width: 1024px) {
@@ -576,6 +579,11 @@ footer ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    margin-bottom:0px;
+}
+
+#bookingTime .btn {
+    margin-bottom: 10px;
 }
 
 #bookingOccasion {
@@ -630,13 +638,17 @@ footer ul {
 
 .booking {
     display: flex;
-    gap: 30px;
+    justify-content: space-evenly;
 }
 
 .booking aside {
     flex: 1;
     display: flex;
     align-items: center;
+}
+
+.booking aside img {
+    margin-left: 40px;
 }
 
 .bookingFormHeader {
