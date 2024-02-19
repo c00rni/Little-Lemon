@@ -5,18 +5,21 @@ import HomePage from './HomePage';
 import LoginPage from './LoginPage';
 import OnlineShop from './OnlineShop';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useReducer } from 'react';
 //import { useEffect, useReducer } from 'react';
-import { fetchAPI} from './fakeApi';
+//import { fetchAPI} from './fakeApi';
 
 
 function App() {
 
-  const [date, setDate] = useState(null)
-  const [availabaleTimes, setAvailabaleTimes] = useState([])
-  useEffect((date)=> {
-    setAvailabaleTimes(fetchAPI(date))
-  }, [date])
+  // const [date, setDate] = useState(null)
+  const updateTimes = (date) => new Set(["12:00", "13:30"])
+  const initializeTimes = () => [];
+  const [availabaleTimes, dispatch] = useReducer(updateTimes, initializeTimes)
+
+  // useEffect((date)=> {
+  //   setAvailabaleTimes(fetchAPI(date))
+  // }, [date])
 
 
   return (
@@ -26,7 +29,7 @@ function App() {
         <Route path="/" element={<HomePage />}>
           <Route path="about" element={<About />} />
         </Route>
-        <Route path="/booking" element={<BookingPage date={[date, setDate]} availabaleTimes={availabaleTimes}/>}></Route>
+        <Route path="/booking" element={<BookingPage availabaleTimes={[availabaleTimes, dispatch]}/>}></Route>
         <Route path="/order-online" element={<OnlineShop />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
       </Routes>

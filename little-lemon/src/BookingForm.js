@@ -8,10 +8,11 @@ import React, { useState } from "react";
 import BookingSlot from "./BookingSlot";
 import { useRef } from 'react';
 
-function BookingForm({date, availabaleTimes}) {
+function BookingForm({availabaleTimes}) {
     const minimumDate = new Date().toISOString().split('T')[0];
     //const [availabaleTimes, dispatch] = data;
-    const [selectedDate, setSelectedDate] = date
+    //const [selectedDate, setSelectedDate] = date
+    const [times, dispatch] = availabaleTimes
     const [active, setActive] = useState(null);
     const [values, setValues] = useState({
         resDate: null,
@@ -24,7 +25,7 @@ function BookingForm({date, availabaleTimes}) {
     const handleChange = event => {
 
         if (event.target.name === "resDate") {
-            setSelectedDate(event.target.value)
+            dispatch(event.target.value)
         }
 
         setValues(prevState => {
@@ -52,7 +53,7 @@ function BookingForm({date, availabaleTimes}) {
             <form onSubmit={handleSubmit}>
 
                 <input
-                value={selectedDate ? selectedDate : "Date"}
+                value={values.resDate ? values.resDate : "Date"}
                 onFocus={toDateInput}
                 name="resDate" min={minimumDate}
                 required={true}
@@ -61,7 +62,7 @@ function BookingForm({date, availabaleTimes}) {
                 ref={inputRef}
                 />
                 <div name="resTime" onChange={handleChange} id="bookingTime">
-                    {values.resDate ? [...availabaleTimes].map((time, index) => <BookingSlot index={index} activeIndex={active} onClick={setActive} children={time} handleChange={handleChange} key={index}/>) : null}
+                    {values.resDate ? [...times].map((time, index) => <BookingSlot index={index} activeIndex={active} onClick={setActive} children={time} handleChange={handleChange} key={index}/>) : null}
                 </div>
                 <select name="guests" defaultValue="Number of Diners" onChange={handleChange} id="guests">
                     <option disabled hidden>Number of Diners</option>
