@@ -7,11 +7,12 @@
 import React, { useState } from "react";
 import BookingSlot from "./BookingSlot";
 import { useRef } from 'react';
+import { submitAPI } from "./fakeApi";
+import { useNavigate } from "react-router-dom";
 
 function BookingForm({availabaleTimes}) {
     const minimumDate = new Date().toISOString().split('T')[0];
-    //const [availabaleTimes, dispatch] = data;
-    //const [selectedDate, setSelectedDate] = date
+    const navigate = useNavigate();
     const [times, dispatch] = availabaleTimes
     const [active, setActive] = useState(null);
     const [values, setValues] = useState({
@@ -39,10 +40,16 @@ function BookingForm({availabaleTimes}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (values.resDate && values.resTime && values.guests && values.occasion) {
-           // dispatch(values);
-           console.log(values)
+           submitForm(values)
         }
     }
+
+    const submitForm = (formData) => {
+        if (submitAPI(formData)) {
+            navigate("/confirmation");
+        }
+    }
+
 
     const toDateInput = () => {
         inputRef.current.type = 'date';

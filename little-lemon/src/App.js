@@ -7,6 +7,7 @@ import OnlineShop from './OnlineShop';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useReducer } from 'react';
 import { fetchAPI} from './fakeApi';
+import ConfirmationPage from './ConfirmationPage';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/booking" element={<BookingPage availabaleTimes={[availabaleTimes, dispatch]}/>}></Route>
         <Route path="/order-online" element={<OnlineShop />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/confirmation" element={<ConfirmationPage />}></Route>
       </Routes>
     </BrowserRouter>
     </>

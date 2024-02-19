@@ -598,28 +598,6 @@ footer ul {
     grid-area: optOut;
 }
 
-/* .bookingOptions {
-    grid-area: bookingOptions;
-    display: grid;
-    grid:
-    "bookingOptionsTitle bookingOptionsTitle" auto
-    ". optStd" auto
-    ". optOut" auto /
-    1fr 1fr;
-}
-
-.bookingOptions h3 {
-    grid-area: bookingOptionsTitle;
-}
-
-.bookingOptions input {
-    height: 2rem;
-}
-
-.bookingOptions span {
-    font-size: var(--type-content-size);
-} */
-
 #bookingSubmit {
     grid-area: bookingSubmit;
     width: 100%;
@@ -658,4 +636,15 @@ footer ul {
 .booking aside img {
     object-fit: cover;
     width: 100%;
+}
+
+/* confirmation */
+
+.confirmation {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
