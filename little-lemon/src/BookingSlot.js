@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function BookingSlot({ index, activeIndex, onClick, children, handleChange}){
 
     const handleClick = event => {

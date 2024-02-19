@@ -2,7 +2,7 @@ import Header from './Header';
 import Footer from './Footer';
 import BookingForm from './BookingForm';
 
-function BookingPage({data}) {
+function BookingPage({date, availabaleTimes}) {
 
     return (
         <>
@@ -17,7 +17,7 @@ function BookingPage({data}) {
 
                                 <h3>Find a table for any occasion</h3>
                             </div>
-                            <BookingForm data={data}/>
+                            <BookingForm date={date} availabaleTimes={availabaleTimes}/>
                         </div>
                         <aside>
                             <img src={require("./assets/images/restaurant.jpg")} alt="Inside the restaurant" />
