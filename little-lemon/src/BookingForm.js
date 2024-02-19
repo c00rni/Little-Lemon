@@ -5,39 +5,11 @@
 // import * as Yup from 'yup';
 // import "react-datepicker/dist/react-datepicker.css";
 import React, { useState } from "react";
+import BookingSlot from "./BookingSlot";
 
-const data = {
-    "19/02/2024": {
-        "11:00": [4, 4, 8, 2, 2],
-        "12:00": [1, 0, 0, 0, 1],
-        "13:00": [1, 0, 0, 0, 2],
-        "14:00": [4, 2, 8, 0, 2],
-        "15:00": [4, 4, 8, 1, 1],
-        "16:00": [4, 4, 8, 1, 2],
-        "17:00": [4, 4, 8, 2, 1],
-        "18:00": [2, 0, 4, 0, 2],
-        "19:00": [0, 0, 0, 1, 2],
-        "20:00": [0, 0, 0, 2, 2],
-        "21:00": [2, 4, 8, 1, 0],
-        "22:00": [4, 4, 8, 2, 0],
-    },
-    "20/02/2024": {
-        "11:00": [4, 4, 8, 2, 2],
-        "12:00": [1, 0, 0, 0, 1],
-        "13:00": [1, 0, 0, 0, 2],
-        "14:00": [4, 2, 8, 0, 2],
-        "15:00": [4, 4, 8, 1, 1],
-        "16:00": [4, 4, 8, 1, 2],
-        "17:00": [4, 4, 8, 2, 1],
-        "18:00": [2, 0, 4, 0, 2],
-        "19:00": [0, 0, 0, 1, 2],
-        "20:00": [0, 0, 0, 2, 2],
-        "21:00": [2, 4, 8, 1, 0],
-        "22:00": [4, 4, 8, 2, 0],
-    },
-};
-
-function BookingForm() {
+function BookingForm({data}) {
+    const [stateData, dispatch] = data;
+    const [active, setActive] = useState(null);
     const [values, setValues] = useState({
         resDate: null,
         resTime: null,
@@ -56,8 +28,9 @@ function BookingForm() {
 
     const handleSumbmit = (event) => {
         event.preventDefault();
-        if (values.resDate && values.resTime && values.guests && values.occasion)
-        console.log(values);
+        if (values.resDate && values.resTime && values.guests && values.occasion) {
+            dispatch(values);
+        }
     }
 
     return (
@@ -65,15 +38,14 @@ function BookingForm() {
             <form onSubmit={handleSumbmit}>
                 <select name="resDate" defaultValue="Date" onChange={handleChange} id="bookingDate">
                     <option disabled hidden>Date</option>
-                    {Object.keys(data).map(date => <option key={date} value={date}>{date}</option>)}
+                    {Object.keys(stateData).map(date => <option key={date} value={date}>{date}</option>)}
                 </select>
-                <select name="resTime" defaultValue="Time" onChange={handleChange} id="bookingTime">
-                    <option disabled hidden>Time</option>
-                    {values.resDate ? Object.keys(data[values.resDate]).map(time => <option key={time} value={time}>{time}</option>) : null}
-                </select>
+                <div name="resTime" onChange={handleChange} id="bookingTime">
+                    {values.resDate ? Object.keys(stateData[values.resDate]).map((time, index) => <BookingSlot index={index} activeIndex={active} onClick={setActive} children={time} handleChange={handleChange} key={index}/>) : null}
+                </div>
                 <select name="guests" defaultValue="Number of Diners" onChange={handleChange} id="guests">
                     <option disabled hidden>Number of Diners</option>
-                    {values.resTime ? [...Array(Math.max(...data[values.resDate][values.resTime])).keys()].map( number => <option key={number+1} value={number+1}>{number+1}</option>) : null}
+                    {values.resTime ? [...Array(Math.max(...stateData[values.resDate][values.resTime])).keys()].map( number => <option key={number+1} value={number+1}>{number+1}</option>) : null}
                 </select>
                 <select name="occasion" defaultValue="Occasion" onChange={handleChange} id="bookingOccasion">
                     <option disabled hidden>Occasion</option>
@@ -81,11 +53,6 @@ function BookingForm() {
                     <option value="Birthday">Birthday</option>
                     <option value="Anniversary">Anniversary</option>
                 </select>
-                {/* <div className="bookingOptions">
-                    <h3 id="bookingOptionsTitle">Seating options</h3>
-                    <p>Standard</p><input type="radio" name="options" value="Standard" id="optStd"/>
-                    <p>Outside</p><input type="radio" name="options" value="Outside" id="optOut"/>
-                </div> */}
 
                 <input type="submit" value="Let's go" className='btn btn-primary' id="bookingSubmit"/>
             </form>

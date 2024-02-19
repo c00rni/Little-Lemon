@@ -179,6 +179,16 @@ main .button {
     background-color: var(--primary-light);
 }
 
+.btn-secondary {
+    color: var(--highlight-light);
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary-inverted {
+    color: var(--primary-dark);
+    background-color: var(--highlight-light);
+}
+
 .mt-4 {
     margin-top: 4rem;
 }
@@ -514,10 +524,6 @@ footer ul {
     margin-top: 20px;
 }
 
-.reserver-table button {
-    margin: 4rem 0;
-}
-
 .reserver-table label {
     font-family: var(--regular-font);
     font-size: var(--type-content-size);
@@ -535,7 +541,8 @@ footer ul {
 .bookingForm form{
     display: grid;
     grid:
-    "bookingDate bookingTime" auto
+    "bookingDate bookingDate" auto
+    "bookingTime bookingTime" auto
     "bookingGuests bookingGuests" auto
     "bookingOccasion bookingOccasion" auto
     "bookingSubmit bookingSubmit" auto
@@ -564,7 +571,10 @@ footer ul {
 }
 
 #bookingTime {
-    grid-area: bookingTime
+    grid-area: bookingTime;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 #bookingOccasion {
