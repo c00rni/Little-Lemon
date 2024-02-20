@@ -225,9 +225,9 @@ main .right {
 }
 
 .best-dish-img {
-    width: 35rem;
-    height: 32rem;
-    background: url(./restauranfood.jpg) center center/cover;
+    width: 350px;
+    height: 320px;
+    object-fit: cover;
     border-radius: 16px;
     border: 1px solid var(--highlight-dark);
     margin: auto;
@@ -349,6 +349,7 @@ main .right {
 .review {
     background-color: var(--highlight-light);
     color: var(--highlight-dark);
+    border-radius: 4px;
     padding: 20px;
     margin-bottom: 30px;
     width: 305px;
@@ -504,6 +505,10 @@ footer img {
 footer ul {
     margin-bottom: 20px;
     list-style: none;
+}
+
+footer a {
+    color: var(--highlight-dark)
 }
 
 /* Booking table */
@@ -665,4 +670,8 @@ footer ul {
     justify-content: center;
     justify-items: center;
     align-items: center;
+}
+
+.center {
+    text-align: center;
 }

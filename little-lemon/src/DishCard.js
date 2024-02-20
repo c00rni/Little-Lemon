@@ -1,11 +1,11 @@
-function DishCard(props) {
+function DishCard({title, price, description, imagePath}) {
     return (
         <article className="card">
-            <img className="card-img" src={require("./assets/images/lemon dessert.jpg")} alt="Special chef dish" />
+            <img className="card-img" src={imagePath} alt="Special chef dish" />
             <div className="card-content">
-                <h2 className="card-title">{props.title}</h2>
-                <p className="card-price">{props.price}</p>
-                <p className="card-description">{props.description}</p>
+                <h2 className="card-title">{title}</h2>
+                <p className="card-price">{price}</p>
+                <p className="card-description">{description}</p>
                 <a href="#reservations">Order a delivery <img src={require("./assets/images/moped.png")} alt="" /></a>
             </div>
         </article>

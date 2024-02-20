@@ -16,16 +16,40 @@ function Footer() {
 
                     <ul>
                         <h2>Contact</h2>
-                        <li>Adress</li>
-                        <li>Phone</li>
-                        <li>email</li>
+                        <li>Little Lemon</li>
+                        <li>29 route du bima</li>
+                        <li>St naza Street Chicago</li>
                     </ul>
 
                     <ul>
                         <h2>Social Media links</h2>
-                        <li>Adress</li>
-                        <li>Phone</li>
-                        <li>email</li>
+                        <li>
+                            {" "}
+                            <a
+                                href="https://www.facebook.com/littlelemon"
+                                rel="external"
+                            >
+                                Facebook
+                            </a>{" "}
+                            </li>
+                            <li>
+                            {" "}
+                            <a
+                                href="https://www.instagram.com/littlelemon"
+                                rel="external"
+                            >
+                                Instagram
+                            </a>{" "}
+                            </li>
+                            <li>
+                            {" "}
+                            <a
+                                href="https://twitter.com/littlelemon"
+                                rel="external"
+                            >
+                                Twitter
+                            </a>{" "}
+                            </li>
                     </ul>
                 </div>
             </div>
