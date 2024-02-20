@@ -543,9 +543,13 @@ footer ul {
     display: grid;
     grid:
     "bookingDate bookingDate" auto
+    "errorDate errorDate" auto
     "bookingTime bookingTime" auto
+    "errorTime errorTime" auto
     "bookingGuests bookingGuests" auto
+    "errorGuests errorGuests" auto
     "bookingOccasion bookingOccasion" auto
+    "errorOccasion errorOccasion" auto
     "bookingSubmit bookingSubmit" auto
     / 1fr 1fr;
     width: 100%;
@@ -590,17 +594,31 @@ footer ul {
     grid-area: bookingOccasion;
 }
 
-#optStd {
-    grid-area: optStd;
+.errorDate {
+    grid-area: errorDate;
 }
 
-#optOut {
-    grid-area: optOut;
+.errorTime {
+    grid-area: errorTime;
+}
+
+.errorGuests {
+    grid-area: errorGuests;
+}
+
+.errorOccasion {
+    grid-area: errorOccasion;
 }
 
 #bookingSubmit {
     grid-area: bookingSubmit;
     width: 100%;
+}
+
+.error {
+    font-size: var(--type-content-size);
+    font-family: var(--regular-font);
+    color: var(--secondary-dark);
 }
 
 .bookingImg {
