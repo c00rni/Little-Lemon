@@ -18,3 +18,5 @@ This project was developed with the following technologies:
 - Git and Github
 - Figma
 
+![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/c00rni/Little-Lemon/blob/64557939d025c9d396acda13bc37219c38e3694b/slidshow.gif)https://github.com/c00rni/Little-Lemon/blob/64557939d025c9d396acda13bc37219c38e3694b/slidshow.gif)
+
